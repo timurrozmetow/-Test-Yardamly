@@ -1,0 +1,113 @@
+/* Основной стиль секции */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/1/1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Наложение для затемнения */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Контейнер контента */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Анимации смены слов */
+.changing-text.fade-in {
+  opacity: 1;
+}
+
+.changing-text.fade-out {
+  opacity: 0;
+}
+
+/* Кнопка */
+.hero-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+/* Анимация смены фона */
+@keyframes backgroundSlide {
+  0% {
+    background-image: url("/images/banner1.jpg");
+  }
+  33% {
+    background-image: url("/images/banner2.jpg");
+  }
+  100% {
+    background-image: url("/images/banner3.jpg");
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .hero-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}

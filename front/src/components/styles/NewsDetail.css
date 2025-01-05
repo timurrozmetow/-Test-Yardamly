@@ -1,0 +1,57 @@
+.news-detail-container {
+  margin: 0 auto;
+}
+
+.image-overlay {
+  position: relative;
+}
+
+.news-detail-image {
+  width: 100%;
+  height: auto;
+  filter: brightness(65%); /* Затемнение изображения */
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.news-detail-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.news-detail-date {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.news-detail-content {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.8;
+  margin: 2rem 0;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,164 @@
+/* Общий стиль для контейнера */
+.about-container {
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  /* Hero Section */
+  .hero-section1 {
+    background: url("/images/about.png");
+    width: 100%;
+    height: 100vh;
+    color: white;
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .hero-title1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease;
+  }
+  
+  .hero-subtitle1 {
+    font-size: 1.5rem;
+    animation: fadeIn 2s ease 1s;
+  }
+  
+  /* Values Section */
+  .values-section {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background: #f4f4f4;
+  }
+  
+  .values-section .content {
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  .values-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .values-section .section-text {
+    font-size: 1.2rem;
+  }
+  
+  .values-section .image-background {
+    background: url("/images/1.png") no-repeat center center/cover;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Team Section */
+  .team-section {
+    background: #fff;
+    padding: 4rem 2rem;
+  }
+  
+  .team-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+  
+  .team-member {
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .team-member h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Stats Section */
+  .stats-section {
+    color: white;
+    background: #f4f4f4;
+
+    padding: 4rem 2rem;
+  }
+  
+  .stats-grid {
+    display: grid;
+    background: #f4f4f4;
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+  
+  .stat-item h3 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-item p {
+    font-size: 1.2rem;
+  }
+  
+  /* Call-to-Action */
+  .call-to-action {
+    background: #f4f4f4;
+    padding: 4rem 2rem;
+  }
+  
+  .call-to-action h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .call-to-action p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #0056b3;
+  }
+  
+  /* Анимация */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

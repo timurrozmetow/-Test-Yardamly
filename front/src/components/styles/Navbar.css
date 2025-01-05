@@ -1,0 +1,58 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    background: none; /* Прозрачный фон */
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    color: white;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .navbar-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+  
+  .navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .navbar-menu a:hover {
+    text-decoration: underline;
+  }
+  .language-switcher {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+  }
+  
+  .language-switcher button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .language-switcher button:hover {
+    background-color: #0056b3;
+  }
+  
+  .language-switcher button:focus {
+    outline: none;
+  }
+  
