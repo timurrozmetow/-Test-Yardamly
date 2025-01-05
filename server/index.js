@@ -6,7 +6,8 @@ const fs = require('fs');
 const path = require('path');
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
+require('dotenv').config();
+
 
 const app = express();
 const port = 5000;
@@ -31,23 +32,23 @@ const uploadsDir = path.join(__dirname, 'uploads');
 //     database: 'yardamly'  
 // };
 
-const dbConfig = mysql.createConnection({
+const dbConfig = {
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-});
+};
 
 let db;
 
 const connectDB = async () => {
-    try {
-        db = await mysql.createConnection(dbConfig);
-        console.log('Connected to the database');
-    } catch (err) {
-        console.error('Database connection error:', err);
-        process.exit(1);
-    }
+  try {
+    db = await mysql.createConnection(dbConfig);
+    console.log('Connected to the database');
+  } catch (err) {
+    console.error('Database connection error:', err);
+    process.exit(1);
+  }
 };
 
 // Добавить FAQ
