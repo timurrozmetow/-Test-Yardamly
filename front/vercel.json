@@ -1,8 +1,12 @@
 {
-    "build": {
-      "env": {
-        "NODE_ENV": "production"
-      }
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "http://localhost:5000/api/$1"
     }
-  }
-  
+  ]
+}
