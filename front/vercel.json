@@ -1,9 +1,12 @@
 {
   "rewrites": [
-    {
-      "source": "/admin",
-      "destination": "/index.html"
-    },
+    { "source": "/aboutus", "destination": "/index.html" },
+    { "source": "/admin", "destination": "/index.html" },
+    { "source": "/news/(.*)", "destination": "/index.html" },
+    { "source": "/faq", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" },
+    { "source": "/gallery", "destination": "/index.html" },
+    { "source": "/news", "destination": "/index.html" },
     {
       "source": "/api/(.*)",
       "destination": "http://localhost:5000/api/$1"
