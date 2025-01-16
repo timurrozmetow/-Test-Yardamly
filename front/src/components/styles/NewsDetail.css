@@ -1,51 +1,56 @@
-.news-detail-container {
-  margin: 0 auto;
-}
 
-.image-overlay {
+
+.news-detail-image-container {
+  width: 100%;
+  height: auto;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .news-detail-image {
   width: 100%;
   height: auto;
-  filter: brightness(65%); /* Затемнение изображения */
+  object-fit: cover;
+  max-height: 500px;
+
 }
 
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
-  padding: 1rem 2rem;
+.news-detail-content-container {
+  background: #ffffff;
+  padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  
+}
+.text-overlay{
+  padding: 0 2%;
 }
 
 .news-detail-title {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .news-detail-date {
-  font-size: 1rem;
-  color: #ddd;
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 20px;
 }
 
 .news-detail-content {
   font-size: 1.2rem;
   color: #666;
   line-height: 1.8;
-  margin: 2rem 0;
+  margin-bottom: 30px;
 }
 
 .back-btn {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background-color: #007bff;
+  padding: 10px 20px;
+  background-color: #0056b3;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -53,5 +58,39 @@
 }
 
 .back-btn:hover {
-  background-color: #0056b3;
+  background-color: #0057b3a4;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .news-detail-container {
+    padding: 10px;
+  }
+
+  .news-detail-title {
+    font-size: 2rem;
+  }
+
+  .news-detail-content {
+    font-size: 1rem;
+  }
+
+  .news-detail-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-detail-title {
+    font-size: 1.8rem;
+  }
+
+  .news-detail-content {
+    font-size: 0.9rem;
+  }
+
+  .back-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
 }

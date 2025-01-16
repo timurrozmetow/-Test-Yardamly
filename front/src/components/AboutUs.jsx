@@ -41,14 +41,6 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
-      <section className="call-to-action">
-        <h2>Join Our Journey</h2>
-        <p>
-          Ready to collaborate or learn more about us? Reach out to us today.
-        </p>
-        <button className="cta-button">Contact Us</button>
-      </section>
     </div>
   );
 };

@@ -1,20 +1,14 @@
 /* General Footer Styles */
 .footer {
-  position: relative;
-  background: #000;
-  color: white;
+  color: white !important;
   font-family: Arial, sans-serif;
-  text-align: center;
+  /* padding: 2% 4%; */
 }
-
-.footer-background {
-  background: url('/images/1.png') no-repeat center center/cover;
-  padding: 3rem 2rem;
+.logo-footer{
+  width: 10%;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer Content Layout */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -22,33 +16,20 @@
   align-items: flex-start;
   gap: 2rem;
   color: white;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Footer Section Styling */
-.footer-section {
-  flex: 1;
-  min-width: 250px;
-}
-
-.footer-logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 1rem;
+  background-color: #0c1f45;
+  padding: 2% 2%;
 }
 
 .footer-description {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1rem;
-  color: #ddd;
+  color: white;
 }
 
 .footer-copyright {
   font-size: 0.9rem;
-  color: #aaa;
+  color: white;
 }
 
 /* Links Section */
@@ -64,7 +45,7 @@
 
 .footer-links a {
   text-decoration: none;
-  color: #ddd;
+  color: white;
   transition: color 0.3s ease;
 }
 
@@ -72,14 +53,13 @@
   color: #fff;
 }
 
-/* Contact Section */
-.footer-section p {
+.footer-section p, .footer-section1 p {
   margin: 0.5rem 0;
-  color: #ddd;
+  color: white;
 }
 
-.footer-section a {
-  color: #ddd;
+.footer-section a, .footer-section1 a {
+  color: white;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -87,8 +67,15 @@
 .footer-section a:hover {
   color: #fff;
 }
+.footer-section1{
+  margin: 0 auto;
+}
 
-/* Responsive Styling */
+.footer-section{
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;

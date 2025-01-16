@@ -13,23 +13,22 @@ const HeroSection = () => {
       setTimeout(() => {
         setCurrentWord((prev) => (prev + 1) % words.length);
         setFadeOut(false);
-      }, 500); // Время на исчезновение
-    }, 4000); // Интервал смены слов
+      }, 500); 
+    }, 4000); 
 
     return () => clearInterval(interval);
   }, [words.length]);
 
   return (
     <div className="hero-section">
-      {/* Наложение для затемнения фона */}
       <div className="hero-overlay"></div>
 
       {/* Контент */}
       <div className="hero-content">
-        <h1>Yardamly Syyahat</h1>
-        <p className={`changing-text ${fadeOut ? "fade-out" : "fade-in"}`}>
-          {words[currentWord]}
-        </p>
+        <h1 className={`changing-text ${fadeOut ? "fade-out" : "fade-in"}`}>
+          {words[currentWord]} </h1>
+        
+        <a className="about-btn" href="/">Biz Barada</a>
       </div>
     </div>
   );

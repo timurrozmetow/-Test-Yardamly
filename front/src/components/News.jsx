@@ -7,17 +7,15 @@ import { Navigation } from "swiper/modules";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import "./styles/News.css";
-import "./styles/HeroSection.css";
 
 const News = () => {
   const { i18n, t } = useTranslation();
-  const currentLanguage = i18n.language; // Получение текущего языка из i18n
+  const currentLanguage = i18n.language; 
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [showAllNews, setShowAllNews] = useState(false); // Состояние для отображения всех новостей
+  const [showAllNews, setShowAllNews] = useState(false); 
 
-  // Функция для загрузки новостей с сервера
   useEffect(() => {
     const fetchNews = async () => {
       try {
@@ -47,9 +45,18 @@ const News = () => {
 
   return (
     <div className="news-container">
+      <div className="main-text-news">
       <h1 className="news-header">{t("LATEST_NEWS")}</h1>
+      <a href="/news">
+      <button
+            className="show-more-btn"
+           
+          >
+            {t("SHOW_MORE_NEWS")}
+          </button>
+          </a>
+      </div>
 
-      {/* Слайдер новостей */}
       {!showAllNews && (
         <>
           <Swiper
@@ -57,8 +64,11 @@ const News = () => {
             navigation={true}
             modules={[Navigation]}
             spaceBetween={20}
-            slidesPerView={4}
+            slidesPerView={3}
             breakpoints={{
+              1024:{
+                slidesPerView: 3,
+              },
               768: {
                 slidesPerView: 2,
               },
@@ -93,48 +103,7 @@ const News = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* Кнопка "Еще новости" с иконкой стрелок */}
-          <button
-            className="show-more-btn"
-            onClick={() => setShowAllNews(true)}
-          >
-            <div className="arrow-up"></div>
-            {t("SHOW_MORE_NEWS")}
-          </button>
         </>
-      )}
-
-      {/* Полный список новостей */}
-      {showAllNews && (
-        <div className="all-news-list">
-          {newsData.map((news) => (
-            <div key={news.id} className="news-list-item">
-              <img
-                src={`http://localhost:5000${news.image_url}`}
-                alt={news[`title_${currentLanguage}`]}
-                className="news-list-image"
-              />
-              <div className="news-list-content">
-                <h2>{news[`title_${currentLanguage}`]}</h2>
-                <p>{news[`description_${currentLanguage}`]}</p>
-                <p className="news-list-date">
-                  {t("PUBLISHED_ON")}:{" "}
-                  {new Date(news.created_at).toLocaleDateString()}
-                </p>
-                <Link to={`/news/${news.id}`} className="read-more-btn">
-                  {t("READ_MORE")}
-                </Link>
-              </div>
-            </div>
-          ))}
-          <button
-            className="show-less-btn"
-            onClick={() => setShowAllNews(false)}
-          >
-            {t("SHOW_LESS_NEWS")}
-          </button>
-        </div>
       )}
     </div>
   );

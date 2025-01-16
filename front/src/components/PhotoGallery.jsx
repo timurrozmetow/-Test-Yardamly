@@ -19,6 +19,7 @@ const PhotoGallery = () => {
 
   return (
     <div className="seamless-gallery-container">
+      <h1 className="galery-header">Photo</h1>
       <div className="seamless-gallery">
         {photos.map((photo, index) => (
           <div className="gallery-item" key={`gallery-item-${index}`}>

@@ -5,6 +5,9 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        SHOW_MORE_NEWS:'More',
+        ALL_NEWS:'News',
+        FAQ_TITLE:'Frequently Asked Questions',
         "HOME": "HOME",
         "NEWS": "NEWS",
         "CONTACT": "CONTACT",
@@ -16,12 +19,23 @@ i18n.use(initReactI18next).init({
         "READ_MORE": "Read More",
         "BACK_TO_NEWS": "Back to News",
         "PHOTO_GALLERY": "Photo Galery",
-        "CLOSE": "Close"
+        "CLOSE": "Close",
+        aboutGen:'About company',
+        about1:'This is a travel company specializing in organizing travel and tours for clients from Turkmenistan and other countries. The company provides a wide range of services, including booking air tickets, organizing tours, visa support, hotel reservations and transportation services.',
+        digit1:'1610',
+        digit2:'5415',
+        digit3:'54',
+        about2:'Fluent communication in Turkish, Turkmen, English, Russian, and Farsi ensures smooth collaboration across borders.        ',
+        about3:'Fluent communication in Turkish, Turkmen, English, Russian, and Farsi ensures smooth collaboration across borders.        ',
+        about4:'Fluent communication in Turkish, Turkmen, English, Russian, and Farsi ensures smooth collaboration across borders.        ',
 
       },
     },
     tm: {
       translation: {
+        SHOW_MORE_NEWS:'Giňişleýin',
+        ALL_NEWS:'Habarlar',
+        FAQ_TITLE:'Köp soralýaň soraglar',
         "HOME": "BAŞ SAHYPA",
         "NEWS": "TAZELIKLER",
         "CONTACT": "HABARLAŞMAK",
@@ -33,7 +47,7 @@ i18n.use(initReactI18next).init({
         "READ_MORE": "Giňişleýin oka",
         "LOADING_NEWS": "Täzelikler ýüklenýär...",
         "ERROR_LOADING_NEWS": "Täzelikleri ýüklemek başartmady.",
-        "LATEST_NEWS": "Täze Täzelikler",
+        "LATEST_NEWS": "Täzelikler",
         "PUBLISHED_ON": "Neşir edilen",
         "READ_MORE": "Giňişleýin oka",
         "BACK_TO_NEWS": "Täzeliklere Yzyna",
@@ -44,6 +58,9 @@ i18n.use(initReactI18next).init({
     },
     ru: {
       translation: {
+        SHOW_MORE_NEWS:'Подробнее',
+        ALL_NEWS:'Новости',
+        FAQ_TITLE:'Часто задаваемые вопросы',
         "HOME": "ГЛАВНАЯ",
         "NEWS": "НОВОСТИ",
         "CONTACT": "КОНТАКТЫ",
@@ -67,6 +84,7 @@ i18n.use(initReactI18next).init({
     },
     tr: {
       translation: {
+        SHOW_MORE_NEWS:'Detaylar',
         "HOME": "ANASAYFA",
         "NEWS": "HABERLER",
         "CONTACT": "İLETİŞİM",

@@ -5,10 +5,11 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import NewsDetail from "./components/NewsDetail";
-import News from "./components/News";
-import FullGallery from "./components/FullGallery";
 import AdminPanel from "./AdminPanel";
 import AboutUs from "./components/AboutUs";
+import "./components/styles/GlobalBackground.css"; // Новый стиль для глобального фона
+import NewsPage from "./components/NewsPage";
+import Contact from "./components/Contact";
 
 
 
@@ -18,7 +19,8 @@ import AboutUs from "./components/AboutUs";
 function App() {
   return (
     <>
-    
+        <div className="global-background">
+
      <Navbar />
 
      <Router>
@@ -26,13 +28,14 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/news/:id" element={<NewsDetail />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/gallery" element={<FullGallery />} />
+        <Route path="/news" element={<NewsPage />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
 
       </Routes>
     </Router>
       <Footer />
+      </div>
     </>
   );
 }

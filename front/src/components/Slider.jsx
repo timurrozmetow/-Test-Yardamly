@@ -5,50 +5,50 @@ import "./styles/Slider.css";
 const slides = [
   {
     id: 1,
-    title: "Turkiye",
-    subtitle: "Istambul",
+    title: "Istanbul",
+    subtitle: "Turkiye",
     description: "Traveling in Turkey usually starts in Istanbul",
-    background: "/images/Turkiye.jpg",
+    background: "/images/Turkiye.webp",
     cards: [
-      { title: "United Arab Emirates", subtitle: "Dubai", image: "/images/Dubai.jpg" },
-      { title: "Russia", subtitle: "Moscow", image: "/images/Moscow.jpg" },
-      { title: "Uzbekistan", subtitle: "Tashkent", image: "/images/Tashkent.jpg" },
+      { title: "Dubai", subtitle: "United Arab Emirates", image: "/images/Dubai.webp" },
+      { title: "Moscow", subtitle: "Russia", image: "/images/Moscow.webp" },
+      { title: "Tashkent", subtitle: "Uzbekistan", image: "/images/Tashkent.webp" },
     ],
   },
   {
     id: 2,
-    title: "United Arab Emirates",
-    subtitle: "Dubai",
+    title: "Dubai",
+    subtitle: "United Arab Emirates",
     description: "Traveling in UAE usually starts in Dubai",
-    background: "/images/Dubai.jpg",
+    background: "/images/Dubai.webp",
     cards: [
-      { title: "Russia", subtitle: "Moscow", image: "/images/Moscow.jpg" },
-      { title: "Uzbekistan", subtitle: "Tashkent", image: "/images/Tashkent.jpg" },
-      { title: "Turkiye", subtitle: "Istambul", image: "/images/Turkiye.jpg" },
+      { title: "Moscow", subtitle: "Russia", image: "/images/Moscow.webp" },
+      { title: "Tashkent", subtitle: "Uzbekistan", image: "/images/Tashkent.webp" },
+      { title: "Istanbul", subtitle: "Turkiye", image: "/images/Turkiye.webp" },
     ],
   },
   {
     id: 3,
-    title: "Russia",
-    subtitle: "Moscow",
+    title: "Moscow",
+    subtitle: "Russia",
     description: "Traveling in Russia usually starts in Moscow",
-    background: "/images/Moscow.jpg",
+    background: "/images/Moscow.webp",
     cards: [
-        { title: "Uzbekistan", subtitle: "Tashkent", image: "/images/Tashkent.jpg" },
-        { title: "Turkiye", subtitle: "Istambul", image: "/images/Turkiye.jpg" },
-      { title: "United Arab Emirates", subtitle: "Dubai", image: "/images/Dubai.jpg" },
+      { title: "Tashkent", subtitle: "Uzbekistan", image: "/images/Tashkent.webp" },
+      { title: "Istanbul", subtitle: "Turkiye", image: "/images/Turkiye.webp" },
+      { title: "Dubai", subtitle: "United Arab Emirates", image: "/images/Dubai.webp" },
     ],
   },
   {
     id: 4,
-    title: "Uzbekistan",
-    subtitle: "Tashkent",
+    title: "Tashkent",
+    subtitle: "Uzbekistan",
     description: "Traveling in Uzbekistan usually starts in Tashkent",
-    background: "/images/Tashkent.jpg",
+    background: "/images/Tashkent.webp",
     cards: [
-      { title: "Turkiye", subtitle: "Istambul", image: "/images/Turkiye.jpg" },
-      { title: "United Arab Emirates", subtitle: "Dubai", image: "/images/Dubai.jpg" },
-      { title: "Russia", subtitle: "Moscow", image: "/images/Moscow.jpg" },
+      { title: "Istanbul", subtitle: "Turkiye", image: "/images/Turkiye.webp" },
+      { title: "Dubai", subtitle: "United Arab Emirates", image: "/images/Dubai.webp" },
+      { title: "Moscow", subtitle: "Russia", image: "/images/Moscow.webp" },
 
     ],
   },
@@ -70,7 +70,6 @@ const Slider = () => {
 
   return (
     <div className="slider-container">
-      {/* Фоновое изображение */}
       <AnimatePresence>
         <motion.div
           key={slide.id}
@@ -83,7 +82,6 @@ const Slider = () => {
         />
       </AnimatePresence>
 
-      {/* Текстовая часть слева */}
       <div className="slider-text">
         <motion.h2
           key={slide.subtitle}
@@ -101,7 +99,7 @@ const Slider = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 30 }}
           transition={{ duration: 0.6 }}
-          className="title"
+          className="title1"
         >
           {slide.title}
         </motion.h1>
@@ -115,14 +113,6 @@ const Slider = () => {
         >
           {slide.description}
         </motion.p>
-        <motion.button
-          className="discover-btn"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          Discover Location
-        </motion.button>
       </div>
 
       {/* Горизонтальные карточки */}

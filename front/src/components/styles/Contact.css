@@ -1,0 +1,23 @@
+.news12{
+    background: url("/images/contact.webp");
+  }
+  
+  .news1212 {
+    background: url("/1/7.webp");
+  }
+  
+
+.news12, .news1212 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 90vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  

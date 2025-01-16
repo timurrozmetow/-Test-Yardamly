@@ -3,12 +3,12 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url("/1/1.jpg");
+  background-image: url("/1/1.webp");
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: left;
   overflow: hidden;
 }
 
@@ -25,26 +25,28 @@
 
 /* Контейнер контента */
 .hero-content {
-  position: relative;
   z-index: 2;
-  text-align: center;
   color: white;
+  left: 5%;
+  /* padding: 0 0 0 3%; */
+  position: absolute;
+  bottom: 10%;
+  
 }
 
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: 5.5rem;
   text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 0 0 6%;
   transition: opacity 0.5s ease-in-out;
-}
 
-/* Анимации смены слов */
+}
+.hero-content a{
+  padding: 2% 4%;
+  color: #fff;
+  border: 1px solid white;
+  border-radius: 5px;
+}
 .changing-text.fade-in {
   opacity: 1;
 }
@@ -76,13 +78,13 @@
 /* Анимация смены фона */
 @keyframes backgroundSlide {
   0% {
-    background-image: url("/images/banner1.jpg");
+    background-image: url("/images/banner1.webp");
   }
   33% {
-    background-image: url("/images/banner2.jpg");
+    background-image: url("/images/banner2.webp");
   }
   100% {
-    background-image: url("/images/banner3.jpg");
+    background-image: url("/images/banner3.webp");
   }
 }
 

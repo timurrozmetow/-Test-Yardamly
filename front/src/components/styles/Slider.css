@@ -1,7 +1,7 @@
 .slider-container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,10 +20,8 @@
   background-size: cover;
   background-position: center;
   z-index: 1;
-  filter: brightness(0.6); /* Затемнение для контраста текста */
 }
 
-/* Текстовая часть */
 .slider-text {
   position: relative;
   z-index: 2;
@@ -39,7 +37,7 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-.title {
+.title1 {
   font-size: 5rem;
   font-weight: 800;
   line-height: 1.2;
@@ -73,20 +71,22 @@
   background-color: white;
   transform: scale(1.05);
 }
-.cards-container{
+
+.cards-container {
   display: flex;
   justify-content: space-between;
 }
+
 .slider-cards {
   position: relative;
   z-index: 2;
   display: flex;
   align-items: center;
-  gap: 2rem; 
-  overflow-x: auto; 
-  max-width: 50%; 
+  gap: 2rem;
+  overflow-x: auto;
+  max-width: 50%;
   padding: 0 1rem;
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
 
 .slider-cards::-webkit-scrollbar {
@@ -126,14 +126,13 @@
 }
 
 .card {
-  flex: 0 0 auto; /* Фиксированный размер для карточек */
+  flex: 0 0 auto;
   width: 240px;
   height: 320px;
   background-size: cover;
   background-position: center;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   margin: 0 1%;
   position: relative;
   filter: brightness(0.9);
@@ -143,13 +142,11 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Постоянный темный фон для текста */
+  background: rgba(0, 0, 0, 0.6);
   padding: 15px;
-  /* text-align: center; */
   color: white;
-  visibility: visible; /* Гарантирует, что текст всегда виден */
-  opacity: 1; /* Убираем плавные эффекты появления */
-  transition: none; /* Убираем анимации */
+  visibility: visible;
+  opacity: 1;
 }
 
 .card-overlay h4 {
@@ -160,16 +157,16 @@
 .card-overlay p {
   font-size: 1rem;
   font-weight: 500;
-  opacity: 1; 
+  opacity: 1;
 }
 
-/* Адаптивность */
+/* Адаптивность для планшетов */
 @media (max-width: 1024px) {
   .slider-text {
     max-width: 50%;
   }
 
-  .title {
+  .title1 {
     font-size: 3.5rem;
   }
 
@@ -189,11 +186,15 @@
 
 @media (max-width: 768px) {
   .slider-text {
-    max-width: 60%;
+    max-width: 50%;
   }
 
-  .title {
-    font-size: 2.8rem;
+  .title1 {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
   }
 
   .slider-cards {
@@ -201,39 +202,31 @@
   }
 
   .card {
-    width: 180px;
-    height: 240px;
+    width: 150px;
+    height: 200px;
   }
 }
 
 @media (max-width: 480px) {
-  .slider-container {
-    flex-direction: column;
-    padding: 0 2%;
+  .slider-text {
+    max-width: 50%;
   }
 
-  .slider-text {
-    max-width: 100%;
-    text-align: center;
+  .title1 {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.7rem;
   }
 
   .slider-cards {
-    max-width: 100%;
-    justify-content: center;
-    gap: 0.5rem;
+    display: none;
+
   }
 
   .card {
     width: 150px;
-    height: 200px;
-  }
-
-  .control-btn {
-    padding: 0.5rem 0.8rem;
-    font-size: 1rem;
-  }
-
-  .slide-number {
-    font-size: 1.2rem;
+    height: 190px;
   }
 }

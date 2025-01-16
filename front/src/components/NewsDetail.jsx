@@ -3,8 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import "./styles/NewsDetail.css";
-import "./styles/HeroSection.css";
-import HeroSection from "./HeroSection";
 
 const NewsDetail = () => {
   const { id } = useParams();
@@ -55,7 +53,7 @@ const NewsDetail = () => {
             </p>
             <div className="news-detail-content">
           <p>{news[`content_${currentLanguage}`]}</p>
-          <Link to="/" className="back-btn">
+          <Link to="/news" className="back-btn">
             {t("BACK_TO_NEWS")}
           </Link>
         </div>
