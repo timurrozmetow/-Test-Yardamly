@@ -4,16 +4,32 @@
     line-height: 1.6;
   }
   .hero-section1 {
-    background: url("/images/about.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
+ position: relative;
+  background: url("/images/about.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 90vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  }
+  .hero-section1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 90vh;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Уровень затемнения (0.5 = 50% черного) */
+    z-index: 1; /* Позволяет разместить контент поверх затемнения */
+  }
+  .hero-section1 > * {
+    position: relative;
+    z-index: 2; /* Контент поверх затемнения */
   }
   .hero-title1 {
     font-size: 3rem;
@@ -22,7 +38,6 @@
   }
   .stat-item{
     color: #0c1f45;
-    background-color: #f9f9f9;
     padding: 4% 2%;
     border-radius: 5px;
     p{
@@ -37,20 +52,17 @@
     .values-section, .values-section1 {
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
     padding: 3% 1%;
     position: relative;
     color: #0c1f45;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
-  .values-section1{
-    flex-direction: row;
 
-  }
   .values-section .content {
-    max-width: 600px;
+    max-width: 45%;
     text-align: left;
     color: #0c1f45;
+    padding: 0 4%;
   }
   .values-section1 .content {
     max-width: 600px;
@@ -67,11 +79,22 @@
   .values-section .section-text, .values-section1 .section-text {
     font-size: 1.2rem;
   }
+
+
+  .values-section .image-background{
+
+    background: url("./images/sm.webp");
+
+  }
+  .values-section1 .image-background{
+
+    background: url("./images/smm.webp");
+
+  }
   .values-section .image-background, .values-section1 .image-background {
     width: 50%;
     height: 50vh;
     border-radius: 5px;
-    background: url("./images/sm.webp");
     background-repeat: no-repeat;
     background-size: cover;
   }

@@ -3,6 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/ContactForm.css";
+import { useTranslation } from "react-i18next";
 
 const GoogleMap = () => (
   <iframe
@@ -33,6 +34,7 @@ const ContactForm = () => {
       }
     }
   };
+  const { t } = useTranslation();
 
   return (
     <section className="contact-section">
@@ -41,13 +43,13 @@ const ContactForm = () => {
           <GoogleMap />
         </div>
         <div className="contact-form-container">
-          <h1 className="contact-header">Have questions?</h1>
+          <h1 className="contact-header">{t('questions')}</h1>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <input
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder={t('name')}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -55,7 +57,7 @@ const ContactForm = () => {
               <input
                 type="tel"
                 name="phone"
-                placeholder="Phone"
+                placeholder={t('phone')}
                 value={formData.phone}
                 onChange={handleChange}
                 required
@@ -63,13 +65,13 @@ const ContactForm = () => {
             </div>
             <textarea
               name="message"
-              placeholder="Message"
+              placeholder={t('message')}
               value={formData.message}
               onChange={handleChange}
               required
             ></textarea>
             <button type="submit" className="send-btn">
-              Send
+            {t('send')}
             </button>
           </form>
           <ToastContainer position="top-right" autoClose={5000} />

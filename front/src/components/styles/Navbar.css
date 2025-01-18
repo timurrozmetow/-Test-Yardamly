@@ -125,7 +125,7 @@
 .hamburger {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 30px;
   height: 24px;
   cursor: pointer;
@@ -150,6 +150,17 @@
 
 .hamburger.open .hamburger-line:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
+}
+.lang-mob{
+  display: flex;
+  padding: 2% 0;
+  gap: 5%;
+  align-items: center;
+  justify-content: center;
+  li{
+    padding:0  4%;
+  }
+  display: none;
 }
 
 @media (min-width: 769px) {
@@ -190,21 +201,6 @@
   .language-menu li:hover {
     background: none;
   }
-}
-
-@media (max-width: 768px) {
-  .language-switcher {
-    display: none;
-  }
-
-  .navbar-menu {
-    gap: 1rem;
-  }
-
-  .navbar-menu a {
-    font-size: 0.8rem;
-  }
-  
 }
 .language-switcher {
   position: relative;
@@ -249,11 +245,7 @@
 .navbar.scrolled a:hover {
   color: #f0f0f0;
 }
-@media (max-width: 768px) {
-  .language-switcher {
-    display: none;
-  }
-}
+
 .navbar {
   width: 100%;
   padding: 2rem 4rem;
@@ -277,4 +269,78 @@
 .merge{
   display: flex;
   gap: 20px;
+} 
+
+.navbar  > * {
+  position: relative;
+  z-index: 2; 
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    display: none;
+  }
+  .navbar{
+    padding: 4% ;
+  } 
+  .navbar-logo{
+    width: 50%;
+  }
+  .about-section h2{
+    text-align: left !important;
+  }
+  .about-section h2::after{
+    width: 100%;
+  }
+  .about-section p{
+    width: 100%;
+  }
+  .about-section p{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .background{
+    background-position:0% !important;
+  }
+  .subtitle{
+    width: 100% !important;
+    font-size: 1rem;
+  }
+  .slider-text{
+    max-width: 100% !important;
+  }
+  .title1{
+    margin-bottom:1rem;
+  }
+  .lang-mob{
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-switcher {
+    display: none;
+  }
+  .navbar{
+    padding: 4% ;
+  } 
+  .navbar-logo{
+    width: 50%;
+    a{
+      font-size: 1rem;
+    }
+  }
+  .about-section h2::after{
+    width: 100%;
+  }
+  .about-section p{
+    width: 100%;
+    max-width: 100%;
+  }
+  .description{
+    font-size: 1rem !important;
+  }
+  .lang-mob{
+    display: flex;
+  }
 }

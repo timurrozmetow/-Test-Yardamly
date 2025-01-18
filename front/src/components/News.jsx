@@ -14,7 +14,6 @@ const News = () => {
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [showAllNews, setShowAllNews] = useState(false); 
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -57,7 +56,7 @@ const News = () => {
           </a>
       </div>
 
-      {!showAllNews && (
+      { (
         <>
           <Swiper
           
@@ -75,6 +74,10 @@ const News = () => {
               480: {
                 slidesPerView: 1,
               },
+              320:{
+                slidesPerView: 1,
+
+              }
             }}
             className="news-swiper"
           >

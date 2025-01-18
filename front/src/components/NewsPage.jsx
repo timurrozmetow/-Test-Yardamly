@@ -4,6 +4,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import "./styles/NewsPage.css";
 
+
 const NewsPage = () => {
   const { i18n, t } = useTranslation();
   const currentLanguage = i18n.language;
@@ -41,9 +42,9 @@ const NewsPage = () => {
   return (
     <div className="news-page-container">
       <section className="news1212">
-        <h1 className="hero-title1">Who We Are</h1>
+        <h1 className="hero-title1">{t("ournews")}</h1>
         <p className="hero-subtitle1">
-          Discover our journey, our passion, and what makes us unique.
+        {t("ournews1")}
         </p>
       </section>
 

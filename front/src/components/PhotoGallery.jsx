@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./styles/PhotoGallery.css";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
+
 
 const PhotoGallery = () => {
+  const { t } = useTranslation();
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
@@ -19,7 +22,7 @@ const PhotoGallery = () => {
 
   return (
     <div className="seamless-gallery-container">
-      <h1 className="galery-header">Photo</h1>
+      <h1 className="galery-header">{t('Photo')}</h1>
       <div className="seamless-gallery">
         {photos.map((photo, index) => (
           <div className="gallery-item" key={`gallery-item-${index}`}>

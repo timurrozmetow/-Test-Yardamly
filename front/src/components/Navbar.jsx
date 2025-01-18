@@ -62,6 +62,20 @@ const Navbar = () => {
               <a href="/contact">{t("CONTACT")}</a>
             </li>
           </ul>
+          <div className="lang-mob">
+          <li onClick={() => changeLanguage("en")}>
+                <img src="/icons/en.svg" alt="EN" className="language-icon" />
+              </li>
+              <li onClick={() => changeLanguage("ru")}>
+                <img src="/icons/ru.svg" alt="RU" className="language-icon" />
+              </li>
+              <li onClick={() => changeLanguage("tm")}>
+                <img src="/icons/tm.svg" alt="TM" className="language-icon" />
+              </li>
+              <li onClick={() => changeLanguage("tr")}>
+                <img src="/icons/tr.svg" alt="TR" className="language-icon" />
+              </li>
+          </div>
         </div>
 
         {/* Языковой переключатель */}
@@ -120,7 +134,6 @@ const Navbar = () => {
 
         {/* Гамбургер меню */}
         <div className="hamburger" onClick={toggleMenu}>
-          <span className={`hamburger-line ${isMenuOpen ? "open" : ""}`}></span>
           <span className={`hamburger-line ${isMenuOpen ? "open" : ""}`}></span>
           <span className={`hamburger-line ${isMenuOpen ? "open" : ""}`}></span>
         </div>

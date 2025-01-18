@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./styles/HeroSection.css";
+import { useTranslation } from "react-i18next";
+
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   const [currentWord, setCurrentWord] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
+  const words = [t("t1"), t("t2"), t("t3")];
 
-  const words = ["Biz bilen dünýäni gez", "Täze dünýäleri açyň", "Syýahatyň başla"];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -14,7 +18,7 @@ const HeroSection = () => {
         setCurrentWord((prev) => (prev + 1) % words.length);
         setFadeOut(false);
       }, 500); 
-    }, 4000); 
+    }, 2800); 
 
     return () => clearInterval(interval);
   }, [words.length]);
@@ -28,7 +32,7 @@ const HeroSection = () => {
         <h1 className={`changing-text ${fadeOut ? "fade-out" : "fade-in"}`}>
           {words[currentWord]} </h1>
         
-        <a className="about-btn" href="/">Biz Barada</a>
+        <a className="about-btn" href="/aboutus">{t('about')}</a>
       </div>
     </div>
   );

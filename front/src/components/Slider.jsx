@@ -1,61 +1,66 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./styles/Slider.css";
+import { useTranslation } from "react-i18next";
 
-const slides = [
-  {
-    id: 1,
-    title: "Istanbul",
-    subtitle: "Turkiye",
-    description: "Traveling in Turkey usually starts in Istanbul",
-    background: "/images/Turkiye.webp",
-    cards: [
-      { title: "Dubai", subtitle: "United Arab Emirates", image: "/images/Dubai.webp" },
-      { title: "Moscow", subtitle: "Russia", image: "/images/Moscow.webp" },
-      { title: "Tashkent", subtitle: "Uzbekistan", image: "/images/Tashkent.webp" },
-    ],
-  },
-  {
-    id: 2,
-    title: "Dubai",
-    subtitle: "United Arab Emirates",
-    description: "Traveling in UAE usually starts in Dubai",
-    background: "/images/Dubai.webp",
-    cards: [
-      { title: "Moscow", subtitle: "Russia", image: "/images/Moscow.webp" },
-      { title: "Tashkent", subtitle: "Uzbekistan", image: "/images/Tashkent.webp" },
-      { title: "Istanbul", subtitle: "Turkiye", image: "/images/Turkiye.webp" },
-    ],
-  },
-  {
-    id: 3,
-    title: "Moscow",
-    subtitle: "Russia",
-    description: "Traveling in Russia usually starts in Moscow",
-    background: "/images/Moscow.webp",
-    cards: [
-      { title: "Tashkent", subtitle: "Uzbekistan", image: "/images/Tashkent.webp" },
-      { title: "Istanbul", subtitle: "Turkiye", image: "/images/Turkiye.webp" },
-      { title: "Dubai", subtitle: "United Arab Emirates", image: "/images/Dubai.webp" },
-    ],
-  },
-  {
-    id: 4,
-    title: "Tashkent",
-    subtitle: "Uzbekistan",
-    description: "Traveling in Uzbekistan usually starts in Tashkent",
-    background: "/images/Tashkent.webp",
-    cards: [
-      { title: "Istanbul", subtitle: "Turkiye", image: "/images/Turkiye.webp" },
-      { title: "Dubai", subtitle: "United Arab Emirates", image: "/images/Dubai.webp" },
-      { title: "Moscow", subtitle: "Russia", image: "/images/Moscow.webp" },
 
-    ],
-  },
-
-];
 
 const Slider = () => {
+  const { t } = useTranslation();
+  const slides = [
+    {
+      id: 1,
+      title: t("Istanbul"),
+      subtitle: t("Turkiye"),
+      description: t("Turkiye1"), 
+      background: "/images/Turkiye.webp",
+      cards: [
+        { title: t("Dubai"), subtitle: t("UnitedArabEmirates"), image: "/images/Dubai.webp" },
+        { title: t("Moscow"), subtitle: t("Russia"), image: "/images/Moscow.webp" },
+        { title: t("Tashkent"), subtitle: t("Uzbekistan"), image: "/images/Tashkent.webp" },
+      ],
+    },
+    {
+      id: 2,
+      title: t("Dubai"),
+      subtitle: t("UnitedArabEmirates"),
+      description: t("UnitedArabEmirates1"),
+      background: "/images/Dubai.webp",
+      cards: [
+        { title: t("Moscow"), subtitle: t("Russia"), image: "/images/Moscow.webp" },
+        { title:  t("Tashkent"), subtitle: t("Uzbekistan"), image: "/images/Tashkent.webp" },
+        { title: t("Istanbul"), subtitle: t("Turkiye"), image: "/images/Turkiye.webp" },
+      ],
+    },
+    {
+      id: 3,
+      title: t("Moscow"),
+      subtitle: t("Russia"),
+      description: t("Russia1"),
+    
+      background: "/images/Moscow.webp",
+      cards: [
+        { title: t("Tashkent"), subtitle: t("Uzbekistan"), image: "/images/Tashkent.webp" },
+        { title: t("Istanbul"), subtitle: t("Turkiye"), image: "/images/Turkiye.webp" },
+        { title: t("Dubai"), subtitle: t("UnitedArabEmirates"), image: "/images/Dubai.webp" },
+      ],
+    },
+    {
+      id: 4,
+      title: t("Tashkent"),
+      subtitle: t("Uzbekistan"),
+      description: t("Uzbekistan1"),
+     
+      background: "/images/Tashkent.webp",
+      cards: [
+        { title: t("Istanbul"), subtitle: t("Turkiye"), image: "/images/Turkiye.webp" },
+        { title: t("Dubai"), subtitle: t("UnitedArabEmirates"), image: "/images/Dubai.webp" },
+        { title: t("Moscow"), subtitle: t("Russia"), image: "/images/Moscow.webp" },
+  
+      ],
+    },
+  
+  ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleNext = () => {
@@ -113,6 +118,17 @@ const Slider = () => {
         >
           {slide.description}
         </motion.p>
+        <div className="slider-controls">
+        <button onClick={handlePrev} className="control-btn">
+          ←
+        </button>
+        <span className="slide-number">
+          {String(currentSlide + 1).padStart(2, "0")}
+        </span>
+        <button onClick={handleNext} className="control-btn">
+          →
+        </button>
+      </div>
       </div>
 
       {/* Горизонтальные карточки */}
@@ -140,17 +156,7 @@ const Slider = () => {
       </div>
 
       {/* Контролы */}
-      <div className="slider-controls">
-        <button onClick={handlePrev} className="control-btn">
-          ←
-        </button>
-        <span className="slide-number">
-          {String(currentSlide + 1).padStart(2, "0")}
-        </span>
-        <button onClick={handleNext} className="control-btn">
-          →
-        </button>
-      </div>
+
     </div>
   );
 };

@@ -1,20 +1,32 @@
 
-
   .news {
+    position: relative;
     background: url("/1/7.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 90vh;
-    color: white;
-    /* padding: 5rem 2rem; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
+     background-size: cover;
+     background-repeat: no-repeat;
+     width: 100%;
+     min-height: 90vh;
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     overflow: hidden; /* Обязательно, чтобы ::before оставался внутри контейнера */
+     }
+     .news::before {
+       content: "";
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: rgba(0, 0, 0, 0.5); /* Уровень затемнения (0.5 = 50% черного) */
+       z-index: 1; /* Позволяет разместить контент поверх затемнения */
+     }
+     .news > * {
+       position: relative;
+       z-index: 2; /* Контент поверх затемнения */
+     }
   
   .news-page-header {
     font-size: 2.5rem;

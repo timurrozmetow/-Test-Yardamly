@@ -1,7 +1,7 @@
 .slider-container {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 95vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,6 +20,21 @@
   background-size: cover;
   background-position: center;
   z-index: 1;
+}
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Уровень затемнения (0.5 = 50% черного) */
+  z-index: 1; /* Позволяет разместить контент поверх затемнения */
+}
+
+.background > * {
+  position: relative;
+  z-index: 2; /* Контент поверх затемнения */
 }
 
 .slider-text {
@@ -94,10 +109,6 @@
 }
 
 .slider-controls {
-  position: absolute;
-  bottom: 5%;
-  left: 10%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -108,7 +119,7 @@
   background-color: transparent;
   color: white;
   border: none;
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem 0;
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
