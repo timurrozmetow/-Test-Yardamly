@@ -11,8 +11,8 @@ const Counter = ({ value }) => {
     const end = parseInt(value);
     if (start === end) return;
 
-    const duration = 2000; // Продолжительность анимации (2 секунды)
-    const increment = end / (duration / 16); // Инкремент при 60FPS
+    const duration = 3500; 
+    const increment = end / (duration / 16); 
 
     const timer = setInterval(() => {
       start += increment;
@@ -21,7 +21,7 @@ const Counter = ({ value }) => {
         start = end;
       }
       setCount(Math.floor(start));
-    }, 16); // 60FPS (1000ms / 60)
+    }, 16); 
 
     return () => clearInterval(timer);
   }, [value]);
@@ -47,7 +47,7 @@ const AboutSection = () => {
     const observer = new IntersectionObserver(handleIntersection, {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5,
+      threshold: 0.8,
     });
 
     const elements = document.querySelectorAll(".scroll-animation");
