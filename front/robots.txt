@@ -1,0 +1,32 @@
+# robots.txt for Yardamly Syyahat
+
+# Общие правила
+User-agent: *
+Disallow: /admin/             # Запретить доступ к административной панели
+Disallow: /private/           # Запретить доступ к приватным ресурсам
+Disallow: /api/               # Запретить доступ к API
+
+# Разрешение для поисковых систем
+Allow: /                     # Разрешить индексацию всего остального контента
+Allow: /aboutus/
+Allow: /news/
+Allow: /contact/
+
+# Карта сайта
+Sitemap: https://yardamly-syyahat.com/sitemap.xml
+
+# Специфичные настройки для Google
+User-agent: Googlebot
+Allow: /                     # Разрешить Google доступ к основным страницам
+
+# Правила для изображений
+User-agent: Googlebot-Image
+Allow: /                     # Разрешить индексацию всех изображений
+Disallow: /private/images/   # Запретить доступ к изображениям в приватной директории
+
+# Запрет для конкретного поискового робота (пример)
+User-agent: BadBot
+Disallow: /
+
+# Указать задержку между запросами для всех роботов (если сервер медленный)
+Crawl-delay: 10
