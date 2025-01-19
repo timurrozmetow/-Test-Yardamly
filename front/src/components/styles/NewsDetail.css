@@ -45,6 +45,7 @@
   color: #666;
   line-height: 1.8;
   margin-bottom: 30px;
+  white-space: pre-line;
 }
 
 .back-btn {

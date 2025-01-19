@@ -83,17 +83,7 @@ const AboutSection = () => {
           <p>{t("about2")}</p>
         </motion.div>
 
-        <motion.div
-          className="stat scroll-animation"
-          initial={{ opacity: 0, x: -50 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h3>
-            <Counter value="1252" />
-          </h3>
-          <p>{t("about3")}</p>
-        </motion.div>
+
 
         <motion.div
           className="stat scroll-animation"
@@ -105,6 +95,18 @@ const AboutSection = () => {
             <Counter value="2475" />
           </h3>
           <p>{t("about4")}</p>
+        </motion.div>
+
+        <motion.div
+          className="stat scroll-animation"
+          initial={{ opacity: 0, x: -50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h3>
+            <Counter value="1252" />
+          </h3>
+          <p>{t("about3")}</p>
         </motion.div>
       </div>
     </div>

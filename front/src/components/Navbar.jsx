@@ -131,12 +131,11 @@ const Navbar = () => {
           )}
         </div>
         </div>
-
-        {/* Гамбургер меню */}
-        <div className="hamburger" onClick={toggleMenu}>
-          <span className={`hamburger-line ${isMenuOpen ? "open" : ""}`}></span>
-          <span className={`hamburger-line ${isMenuOpen ? "open" : ""}`}></span>
+        <div className={`hamburger ${isMenuOpen ? "open" : ""}`} onClick={toggleMenu}>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
         </div>
+
       </div>
     </nav>
   );

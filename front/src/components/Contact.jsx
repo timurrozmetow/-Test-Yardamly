@@ -11,13 +11,15 @@ export default function Contact() {
 
   return (
   <>
+  
         <section className="news12">
         <h1 className="hero-title1">{t('Contact_us')}</h1>
         <p className="hero-subtitle1">
         {t('Contact_us1')}
         </p>
       </section>
-
+      <ContactForm />
+  <FAQ />
       <section className="values-section1">
         <div className="content">
           <h2 className="section-title"> {t('Contact_us2')}</h2>
@@ -28,8 +30,7 @@ export default function Contact() {
         </div>
         <div className="image-background" />
       </section>
-  <ContactForm />
-  <FAQ />
+  
   </>
   )
 }

@@ -3,9 +3,8 @@ import "./styles/PhotoGallery.css";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 
-
 const PhotoGallery = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
@@ -19,20 +18,26 @@ const PhotoGallery = () => {
     };
     fetchPhotos();
   }, []);
+  <br />
+
+  const getLocalizedTitle = (photo) => {
+    const languageKey = `title_${i18n.language}`;
+    return photo[languageKey] || photo.title_en;
+  };
 
   return (
     <div className="seamless-gallery-container">
-      <h1 className="galery-header">{t('Photo')}</h1>
+      <h1 className="galery-header">{t("Photo")}</h1>
       <div className="seamless-gallery">
         {photos.map((photo, index) => (
           <div className="gallery-item" key={`gallery-item-${index}`}>
             <img
               src={`http://localhost:5000${photo.image_url}`}
-              alt={photo.title_en}
+              alt={getLocalizedTitle(photo)}
               className="gallery-img"
             />
             <div className="gallery-text-overlay">
-              <h3>{photo.title_en}</h3>
+              <h3>{getLocalizedTitle(photo)}</h3>
             </div>
           </div>
         ))}
@@ -40,11 +45,11 @@ const PhotoGallery = () => {
           <div className="gallery-item" key={`gallery-item-duplicate-${index}`}>
             <img
               src={`http://localhost:5000${photo.image_url}`}
-              alt={photo.title_en}
+              alt={getLocalizedTitle(photo)}
               className="gallery-img"
             />
             <div className="gallery-text-overlay">
-              <h3>{photo.title_en}</h3>
+              <h3>{getLocalizedTitle(photo)}</h3>
             </div>
           </div>
         ))}
