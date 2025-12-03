@@ -19,10 +19,10 @@ export default function Main() {
           <AboutSection />
           <Slider />
           
-      <News />
+      {/* <News /> */}
       <PhotoGallery />
       <ContactForm />
-      <FAQ />
+      {/* <FAQ /> */}
     </>
   )
 }
