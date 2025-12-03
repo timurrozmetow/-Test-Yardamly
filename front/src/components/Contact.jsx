@@ -18,7 +18,7 @@ export default function Contact() {
         {t('Contact_us1')}
         </p>
       </section>
-      <ContactForm />
+      {/* <ContactForm /> */}
   <FAQ />
       <section className="values-section1">
         <div className="content">
