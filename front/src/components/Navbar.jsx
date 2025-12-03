@@ -55,9 +55,9 @@ const Navbar = () => {
             <li>
               <a href="/aboutus">{t("ABOUT_US")}</a>
             </li>
-            <li>
+            {/* <li>
               <a href="/news">{t("NEWS")}</a>
-            </li>
+            </li> */}
             <li>
               <a href="/contact">{t("CONTACT")}</a>
             </li>
